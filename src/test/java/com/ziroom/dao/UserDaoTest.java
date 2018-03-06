@@ -31,18 +31,5 @@ public class UserDaoTest {
        System.out.println("user is "+user);
     }
 
-    @Test
-    public void updateUser(){
-        UserEntity user=new UserEntity();
-        user.setId(2l);
-        user.setUserName("天空");
-        user.setPassWord("fffxxxx");
-        userDao.updateUser(user);
-    }
-
-    @Test
-    public void deleteUserById(){
-        userDao.deleteUserById(1l);
-    }
 
 }

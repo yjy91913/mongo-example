@@ -1,21 +1,30 @@
 package com.ziroom.entity;
 
+import lombok.ToString;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.io.Serializable;
 
 /**
  * Created by Yangjy on 2018/3/6.
  */
+@ToString
+@Document(collection = "user")
 public class UserEntity implements Serializable {
         private static final long serialVersionUID = -3258839839160856613L;
-        private Long id;
+
+        @Id
+        private String id;
         private String userName;
         private String passWord;
+        private int age;
 
-        public Long getId() {
+        public String getId() {
                 return id;
         }
 
-        public void setId(Long id) {
+        public void setId(String id) {
                 this.id = id;
         }
 
@@ -35,12 +44,11 @@ public class UserEntity implements Serializable {
                 this.passWord = passWord;
         }
 
-        @Override
-        public String toString() {
-                return "UserEntity{" +
-                        "id=" + id +
-                        ", userName='" + userName + '\'' +
-                        ", passWord='" + passWord + '\'' +
-                        '}';
+        public int getAge() {
+                return age;
+        }
+
+        public void setAge(int age) {
+                this.age = age;
         }
 }
